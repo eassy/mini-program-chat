@@ -1,0 +1,12 @@
+<template name="cardItem">
+<view class="cardItem-space"></view>
+<text class="cardItem-text" style="left:15rpx">{{name}}</text>
+<text class="cardItem-text" style="text-align:right;right:35rpx;font-size:50rpx">{{number}}</text>
+</template>
+
+<block wx:for="{{cards}}" wx:for-item="card" wx:key="index">
+<view class="cardItem" bindtap="editCard" bindlongtap="longPress" bindtouchstart="touchStart" bindtouchend="touchEnd" data-item="{{card}}"> 
+<template is="cardItem" data="{{...card}}"/>
+</view>
+</block>
+<view class="addIcon" bindtap="addNewCard"><text style="line-height:100rpx">添加新卡片</text></view>

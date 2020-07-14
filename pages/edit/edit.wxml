@@ -1,0 +1,5 @@
+<form bindsubmit="submitHandler">
+<view class="edit-section"><input name="name" class="edit-input" type="text" placeholder="卡片名称" confirm-type="next" value="{{cardItem.name}}" /></view>
+<view class="edit-section"><input name="number" class="edit-input" type="number" placeholder="卡号" confirm-type="done" value="{{cardItem.number}}"/></view>
+<button type="primary" form-type="submit" class="edit-btn">确定</button>
+</form>

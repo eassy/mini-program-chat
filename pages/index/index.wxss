@@ -1,0 +1,31 @@
+.cardItem {
+  background-color: rgb(31, 28, 28);
+  height: 130rpx;
+  display: block;
+}
+.cardItem-text {
+  height: 60rpx;
+  display: block;
+  font-size: 35rpx;
+  color: white;
+  position: relative;
+  line-height: 60rpx;
+}
+.cardItem-space {
+  height: 10rpx;
+  display: block;
+  background-color: white;
+
+}
+.addIcon {
+  position: fixed;
+  right: 20rpx;
+  bottom: 50rpx;
+  background-color: white;
+  width: 230rpx;
+  height: 100rpx;
+  font-size: 40rpx;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}

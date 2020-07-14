@@ -1,0 +1,23 @@
+page {
+  background-color: #f7f7f7
+}
+
+.edit-section {
+  background-color: white;
+  height: 88rpx;
+  border-top-style: solid;
+  border-top-color: #f5f5f5;
+  border-top-width: 5rpx;
+  margin-top: 15rpx;
+}
+.edit-input {
+  margin-left: 30rpx;
+  background-color: white;
+  height: 100%;
+}
+.edit-btn {
+  margin: 50rpx auto;
+  width: 60%;
+  height: 88rpx;
+  line-height: 88rpx;
+}
