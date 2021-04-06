@@ -1,0 +1,15 @@
+/* pages/chatIndex/chatIndex.wxss */
+.itemContainer {
+  display: flex;
+  margin: 0%;
+}
+
+.item {
+  margin-top: 5%;
+  margin-left: 2%;
+  width: 47%;
+  line-height: 100px;
+  height: 100px;
+  text-align: center;
+  background-color: #eeeeee;
+}

@@ -1,12 +1,15 @@
 {
   "pages": [
+    "pages/chatIndex/chatIndex",
     "pages/index/index",
-    "pages/edit/edit"
+    "pages/edit/edit",
+    "pages/chat-point2point/point2point",
+    "pages/chat-room/chatRoom"
   ],
   "sitemapLocation": "sitemap.json",
   "window": {
     "navigationBarBackgroundColor": "#000000",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "易用卡包"
+    "navigationBarTitleText": "colyseus 聊天"
   }
 }

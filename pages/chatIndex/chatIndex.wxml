@@ -1,0 +1,6 @@
+<!--pages/chatIndex/chatIndex.wxml-->
+<view class="itemContainer">
+<view class="item" bindtap="jumpToPointToPoint">点对点</view>
+<view class="item" bindtap="jumpToRoom">聊天室</view>
+
+</view>
