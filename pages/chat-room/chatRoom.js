@@ -1,4 +1,6 @@
 // pages/chat-room/chatRoom.js
+// var Colyseus = require('../../miniprogram_npm/colyseus.js')
+import * as Colyseus from '../../lib/colyseus.js'
 Page({
 
   /**
@@ -12,7 +14,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var client = new Colyseus.Client('ws://172.26.2.116/:2567');
+    client.joinOrCreate("chat").then(room => {
+      console.log(room.sessionId, "joined", room.name);
+  }).catch(e => {
+      console.log("JOIN ERROR", e);
+  });
   },
 
   /**
