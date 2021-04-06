@@ -14,5 +14,8 @@
     "extends": [
       "@commitlint/config-angular"
     ]
+  },
+  "dependencies": {
+    "colyseus.js": "^0.14.8"
   }
 }
