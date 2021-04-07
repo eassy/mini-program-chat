@@ -1,5 +1,4 @@
 // pages/chat-room/chatRoom.js
-// var Colyseus = require('../../miniprogram_npm/colyseus.js')
 import * as Colyseus from '../../lib/colyseus.js'
 Page({
 
@@ -7,19 +6,44 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    room: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var client = new Colyseus.Client('ws://172.26.2.116/:2567');
+    
+    var client = new Colyseus.Client('ws://172.26.2.116:2567');
     client.joinOrCreate("chat").then(room => {
-      console.log(room.sessionId, "joined", room.name);
-  }).catch(e => {
+      this.room = room;
+      console.log('加入房间', room.sessionId, "joined", room.name);
+      room.onStateChange((state) => {
+        console.log(room.name, "has new state:", state);
+      });
+  
+      room.onMessage("message_type", (message) => {
+        console.log(client.id, "received on", room.name, message);
+      });
+  
+      room.onError((code, message) => {
+        console.log(client.id, "couldn't join", room.name);
+      });
+  
+      room.onLeave((code) => {
+        console.log(client.id, "left", room.name);
+      });
+
+      setTimeout(() => {
+        this.room.send('message', "sdaf");
+      }, 2000);
+
+    }).catch(e => {
       console.log("JOIN ERROR", e);
-  });
+    });
+    
+    
+
   },
 
   /**
@@ -47,7 +71,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    this.room.close();
   },
 
   /**
