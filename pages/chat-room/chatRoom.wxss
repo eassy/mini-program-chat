@@ -1,1 +1,66 @@
 /* pages/chat-room/chatRoom.wxss */
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.messageList {
+  height: 100%;
+  flex: 1;
+  overflow: scroll;
+  background-color: whitesmoke;
+}
+.scroll {
+  height: 100%;
+}
+
+.chatCard {
+  width: 730rpx;
+  display: flex;
+  margin: 10rpx;
+  margin-bottom: 40rpx;
+  flex-direction: column;
+}
+
+.re {
+  text-align: end;
+}
+.name {
+  font-size: 27rpx;
+  font-weight: bold;
+}
+.content {
+  font-size: 35rpx;
+}
+
+.input {
+  height: 80rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+
+.input input {
+  background-color: whitesmoke;
+  width: 80%;
+  height: 80rpx;
+  margin-left: 5px;
+}
+
+.input button {
+  width: 100rpx;
+  height: 35px;
+  font-size: 12px;
+  padding: 0%;
+  line-height: 35px;
+}
+
+/*隐藏滚动条*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

@@ -1,2 +1,25 @@
 <!--pages/chat-room/chatRoom.wxml-->
-<text>pages/chat-room/chatRoom.wxml</text>
+
+<template name="chatCard">
+  <view class="{{isSelf ? 'chatCard re' : 'chatCard'}}" >
+    <view class="name">{{name}}</view>
+    <view class="content">{{content}}</view>
+  </view>
+</template>
+
+<view class="container">
+  <view class="messageList">
+    <scroll-view class="scroll" scroll-y="true">
+      <block wx:for="{{messageList}}" wx:for-item="message">
+        <template is="chatCard" data="{{...message}}" />
+      </block>
+    </scroll-view>
+  </view>
+  
+
+  <view class="input">
+    <input type="text" bindconfirm="inputConfirm" confirm-type="send" bindinput="messageInput" value="{{messageContent}}"/>
+    <button bindtap="send">发送</button>
+  </view>
+</view>
+

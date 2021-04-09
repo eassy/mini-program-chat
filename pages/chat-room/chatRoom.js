@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    room: {}
+    room: {},
+    messageList: [],
+    messageContent: ''
   },
 
   /**
@@ -22,8 +24,17 @@ Page({
         console.log(room.name, "has new state:", state);
       });
   
-      room.onMessage("message_type", (message) => {
-        console.log(client.id, "received on", room.name, message);
+      room.onMessage("*", (type, message) => {
+        console.log(room.sessionId, "received on", room.name, type, message);
+        const name = message.substring(0, message.indexOf(' '));
+        this.data.messageList.push({
+          name: name,
+          content: message.slice(message.indexOf(' ') + 1),
+          isSelf: (name === room.sessionId)
+        })
+        this.setData({
+          messageList: this.data.messageList
+        })
       });
   
       room.onError((code, message) => {
@@ -34,9 +45,6 @@ Page({
         console.log(client.id, "left", room.name);
       });
 
-      setTimeout(() => {
-        this.room.send('message', "sdaf");
-      }, 2000);
 
     }).catch(e => {
       console.log("JOIN ERROR", e);
@@ -71,7 +79,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    this.room.close();
+    this.room.leave();
   },
 
   /**
@@ -93,5 +101,22 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  messageInput (e) {
+    this.setData({
+      messageContent: e.detail.value
+    })
+  },
+  inputConfirm (e) {
+    this.room.send('message', e.detail.value)
+    this.setData({
+      messageContent: ''
+    })
+  },
+  send() {
+    this.room.send('message', this.data.messageContent)
+    this.setData({
+      messageContent: ''
+    })
   }
 })
