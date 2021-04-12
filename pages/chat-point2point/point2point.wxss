@@ -1,1 +1,15 @@
 /* pages/chat-point2point/point2point.wxss */
+.panel {
+  position: absolute;
+  width: 100%;
+  bottom: 80rpx;
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+}
+
+.player {
+  position: absolute;
+}

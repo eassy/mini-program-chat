@@ -1,6 +1,10 @@
 <!--pages/chatIndex/chatIndex.wxml-->
 <view class="itemContainer">
-<view class="item" bindtap="jumpToPointToPoint">点对点</view>
-<view class="item" bindtap="jumpToRoom">聊天室</view>
+  <view class="item" bindtap="jumpToRoom">聊天室</view>
+  <view class="item" bindtap="jumpToPointToPoint">状态同步</view>
+  <view class="item" bindtap="jumpToAuth">认证</view>
+  <view class="item" bindtap="jumpToReconnection">断线重连</view>
+  <view class="item" bindtap="jumpToLobbyRoom">聊天大厅</view>
+  <view class="item" bindtap="jumpToRelayRoom">中转房间</view>
 
 </view>

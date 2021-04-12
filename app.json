@@ -4,7 +4,11 @@
     "pages/index/index",
     "pages/edit/edit",
     "pages/chat-point2point/point2point",
-    "pages/chat-room/chatRoom"
+    "pages/chat-room/chatRoom",
+    "pages/chat-auth/chat-auth",
+    "pages/chat-lobby/chat-lobby",
+    "pages/chat-reconnection/chat-reconnection",
+    "pages/chat-relay/chat-relay"
   ],
   "sitemapLocation": "sitemap.json",
   "window": {

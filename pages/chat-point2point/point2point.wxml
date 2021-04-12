@@ -1,2 +1,12 @@
 <!--pages/chat-point2point/point2point.wxml-->
-<text>pages/chat-point2point/point2point.wxml</text>
+<view class="content" >
+  <view class="player"  wx:for="{{players}}" wx:for-item="player" style="left:{{player.x}} px; top: {{player.y}} px">{{player.sessionId}}</view>
+</view>
+<view class="panel">
+  <button bindtap="up">上</button>
+  <view class="row">
+    <button bindtap="left">左</button>
+    <button bindtap="right">右</button>
+  </view>
+  <button bindtap="down">下</button>
+</view>

@@ -1,4 +1,5 @@
-// pages/chatIndex/chatIndex.js
+// pages/chat-reconnection/chat-reconnection.js
+import * as Colyseus from '../../lib/colyseus.js'
 Page({
 
   /**
@@ -62,35 +63,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  jumpToPointToPoint () {
-    wx.navigateTo({
-      url: '/pages/chat-point2point/point2point',
-    })
-  },
-  jumpToRoom () {
-    wx.navigateTo({
-      url: '/pages/chat-room/chatRoom',
-    })
-  },
-  jumpToAuth () {
-    wx.navigateTo({
-      url: '/pages/chat-auth/chat-auth',
-    })
-  },
-  jumpToReconnection () {
-    wx.navigateTo({
-      url: '/pages/chat-reconnection/chat-reconnection',
-    })
-  },
-  jumpToLobbyRoom () {
-    wx.navigateTo({
-      url: '/pages/chat-lobby/chat-lobby',
-    })
-  },
-  jumpToRelayRoom () {
-    wx.navigateTo({
-      url: '/pages/chat-relay/chat-relay',
-    })
   }
 })

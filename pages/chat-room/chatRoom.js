@@ -18,7 +18,7 @@ Page({
     
     var client = new Colyseus.Client('ws://172.26.2.116:2567');
     client.joinOrCreate("chat").then(room => {
-      this.room = room;
+      this.data.room = room;
       console.log('加入房间', room.sessionId, "joined", room.name);
       room.onStateChange((state) => {
         console.log(room.name, "has new state:", state);
@@ -31,7 +31,7 @@ Page({
           name: name,
           content: message.slice(message.indexOf(' ') + 1),
           isSelf: (name === room.sessionId)
-        })
+        });
         this.setData({
           messageList: this.data.messageList
         })
@@ -108,13 +108,13 @@ Page({
     })
   },
   inputConfirm (e) {
-    this.room.send('message', e.detail.value)
+    this.data.room.send('message', e.detail.value)
     this.setData({
       messageContent: ''
     })
   },
   send() {
-    this.room.send('message', this.data.messageContent)
+    this.data.room.send('message', this.data.messageContent)
     this.setData({
       messageContent: ''
     })
